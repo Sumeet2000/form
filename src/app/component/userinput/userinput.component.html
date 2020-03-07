@@ -1,0 +1,70 @@
+<div class="parentdiv">
+    <form>
+        <p class="pus">
+            Name:
+            <br><input type="text" placeholder="Enter your text here" class="inp" [(ngModel)]="name" name="name">
+        </p>
+        <p class="pus">
+            Contact:
+            <br><input type="text" placeholder="Enter contact number" class="inp" [(ngModel)]="contact" name="contact">
+        </p>
+        <p class="pus">
+            DOB:
+            <br><input type="date" placeholder="DD-MM-YYYY" class="inp" [(ngModel)]="dob" name="dov">
+        </p>
+        <p class="pus">
+            Gender:
+            <br><input type="radio" value="Male" id="male" name="Gender" name="gen" [(ngModel)]="gender">
+            <label for="male">Male</label>
+            <br><input type="radio" value="Female" id="female" name="Gender">
+            <label for="female">Female</label>
+            <br><input type="radio" value="Transgender" id="trans" name="Gender">
+            <label for="trans">Transgender</label>
+        </p>
+        <p class="pus">
+            Staff:
+            <br><input type="radio" value="Teaching" id="teacher" [(ngModel)]="type" name="teach">
+            <label for="teacher">Teaching</label>
+           
+            <input type="radio" value="Maneging" id="manage" [(ngModel)]="type" name="manage">
+            <label for="manage">Management</label>
+           
+            <input type="radio" value="Sport" id="play" [(ngModel)]="type" name="sorit">
+            <label for="play">Sports</label>
+           
+        </p>
+        <div *ngIf="type=='Teaching'">
+            <p class="pus">Qualification:
+                <br><input type="text" value="" id="quali" class="inp">
+            </p>
+            <p class="p">Experience:
+                <br><input type="text" placeholder="5years" value="" id="exp" class="inp">
+            </p>
+            <p class="pus">Subject:
+                <br><input type="text" value="" id="sub" class="inp">
+            </p>
+        </div>
+        <div *ngIf="type=='Maneging'">
+            <p class="pus">Department:
+                <br><input type="text" value="" id="dep" class="inp">
+            </p>
+            <p class="pus">Head:
+                <br><input type="text" value="" id="head" class="inp">
+            </p>
+        </div>
+        <div *ngIf="type=='Sport'">
+            <p class="pus">Sport:
+                <br><input type="text" value="" placeholder="Enter Sporting Event" id="sport" class="inp">
+            </p>
+            <p class="pus">Age:
+                <br><input type="text" value="" id="age" class="inp">
+            </p>
+            <p class="pus">Substitute:
+                <br><input type="text" value="" id="sub" class="inp">
+            </p>
+        </div>
+        <p class="pus">
+            <button type="submit" class="pus" (click)="checkClick()">Submit Data</button>
+        </p>
+    </form>
+</div>
